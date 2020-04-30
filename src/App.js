@@ -84,7 +84,7 @@ class App extends React.Component {
     })
     .then(response => response.json())
     .then( response => {
-    	if(response) {
+    	if(response.status) {
     		fetch('https://salty-fortress-67499.herokuapp.com/image', {
 			method: 'put',
 			headers: {'Content-Type': 'application/json'},
@@ -95,7 +95,9 @@ class App extends React.Component {
 				this.setState(Object.assign(this.state.user, {score: score}))
       })
       .catch(console.log)
-    	}
+    	} else {
+        return;
+      }
     	this.displayFaceBox( this.calculateFaceLocation(response) ) } 
 
     )
