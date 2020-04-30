@@ -38,8 +38,6 @@ class SignIn extends Component {
 				alert('Email or password incorrect!')
 			}
 		})
-		console.log(this.state.signInEmail);
-		console.log(this.state.signInPass);	
 	};
 
 	render( ) {
